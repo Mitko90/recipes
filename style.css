@@ -165,6 +165,9 @@ section {
 }
 
 .recipe-card {
+  --transition-duration: 500ms;
+  --transition-type: ease-in-out;
+
   /* max-width: 300px; */
   border-radius: 1rem;
   overflow: hidden;
@@ -177,6 +180,12 @@ section {
   width: 100%;
   aspect-ratio: 1.5/1;
   object-fit: cover;
+  transition: scale var(--transition-duration) var(--transition-type);
+  transform-origin: bottom;
+
+  &:hover {
+    scale: 1.2;
+  }
 }
 
 .recipe-card__body {
@@ -199,7 +208,8 @@ section {
   border-radius: 99vw;
   color: var(--clr-neutral-400);
   font-weight: bold;
-  transition: background-color 150ms ease-in-out;
+  transition: background-color calc(var(--transition-duration) / 2)
+    var(--transition-type);
 }
 
 .btn:hover {

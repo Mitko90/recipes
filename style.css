@@ -18,6 +18,12 @@
   --clr-neutral-400: #f2e8c6;
 
   --box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  --nice-shadow: 0px 0px 2.2px -4px rgba(0, 0, 0, 0.048),
+    0px 0px 5.3px -4px rgba(0, 0, 0, 0.069),
+    0px 0px 10px -4px rgba(0, 0, 0, 0.085),
+    0px 0px 17.9px -4px rgba(0, 0, 0, 0.101),
+    0px 0px 33.4px -4px rgba(0, 0, 0, 0.122),
+    0px 0px 80px -4px rgba(0, 0, 0, 0.17);
 
   --padding: 1rem;
   --container-min-width: 300px;
@@ -164,6 +170,7 @@ section {
   overflow: hidden;
   background-color: var(--clr-neutral-400);
   color: black;
+  box-shadow: var(--nice-shadow);
 }
 
 .recipe-card__img {
@@ -287,6 +294,10 @@ footer {
   grid-column: 1 / span 3;
 }
 
+.preparation p:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
 .ingredients {
   grid-column: 4 / -1;
 }
@@ -300,7 +311,7 @@ footer {
 
 .recipe-page > * {
   border-radius: var(--spacer);
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--nice-shadow);
 }
 
 @media (max-width: 680px) {
